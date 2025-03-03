@@ -262,30 +262,30 @@ Combine ReadonlyPost and PublicPost using &.`
 
 
 {
-    type Post ={
-        id:number,
-        title:string,
-        content:string,
-        author:string
-    }
+    // type Post ={
+    //     id:number,
+    //     title:string,
+    //     content:string,
+    //     author:string
+    // }
 
-    type ReadOnlyPost = Readonly<Post>
+    // type ReadOnlyPost = Readonly<Post>
 
-    type PublicPost = Omit<Post,"author">
-
-
-    type Instagram = ReadOnlyPost & PublicPost
+    // type PublicPost = Omit<Post,"author">
 
 
-    const mySocialMedia:Instagram = {
+    // type Instagram = ReadOnlyPost & PublicPost
 
-       id:69,
-       title:"fucked up",
-       content:"Excellent",
-       author:"brp"
-    }
 
-    console.log(mySocialMedia)
+    // const mySocialMedia:Instagram = {
+
+    //    id:69,
+    //    title:"fucked up",
+    //    content:"Excellent",
+    //    author:"brp"
+    // }
+
+    // console.log(mySocialMedia)
 }
 
 

@@ -215,20 +215,20 @@
 
 
 
-const form = document.getElementById("myform") as HTMLFormElement
+// const form = document.getElementById("myform") as HTMLFormElement
 
-const myinput = document.querySelector("form > input") as HTMLInputElement
+// const myinput = document.querySelector("form > input") as HTMLInputElement
 
-const h2 = document.createElement("h2")
+// const h2 = document.createElement("h2")
 
-const body = document.querySelector("body")!
+// const body = document.querySelector("body")!
 
-form.onsubmit = (e:SubmitEvent)=>{
+// form.onsubmit = (e:SubmitEvent)=>{
         
-        e.preventDefault()
-        const value = Number(myinput.value) 
-        h2.textContent = String(value + 20)
-        body.append(h2)
+//         e.preventDefault()
+//         const value = Number(myinput.value) 
+//         h2.textContent = String(value + 20)
+//         body.append(h2)
 
         
-}
+// }

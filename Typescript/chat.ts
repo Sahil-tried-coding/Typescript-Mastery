@@ -639,16 +639,35 @@ Ek employee object hai, jo unknown type ka hai. Tumhe Type Assertion ka use kark
 `Readonly Type`
 {
 
-        interface User {
-               readonly name:string,
-                age:number
-        }
+        // interface User {
+        //        readonly name:string,
+        //         age:number
+        // }
         
-        // type newUser:User
+        // // type newUser:User
 
-        const myuser:User = {
-                name:"sahil",
-                age:24
-        }
-        console.log(myuser.age=22)
+        // const myuser:User = {
+        //         name:"sahil",
+        //         age:24
+        // }
+        // console.log(myuser.name="ss")
+}
+`Record Type
+
+type for key value pair 
+
+like Record <string,number>
+               ^      ^
+               |      |
+              key    value
+`
+{
+
+//       type Payment = Record<"amount"|"bank",number | string>
+
+//       const gpay:Payment = {
+//         amount: 30000,
+//         bank:"SBI"
+//       }?
+//       console.log(ypay)
 }
