@@ -53,8 +53,35 @@
 }
 "\uD83D\uDE80 Next Challenge: findItem<T>\nNow let's step up the game with finding elements in an array using generics!\n\n\uD83D\uDEE0 Your Task:\n1\uFE0F\u20E3 Write a function findItem<T> that finds and returns the first element in an array that matches a condition.\n2\uFE0F\u20E3 It should accept an array and a callback function that decides which element to find.\n3\uFE0F\u20E3 It should return T | undefined because the item might not exist.\n\n\uD83D\uDD39 Example Output:\n\nconsole.log(findItem([10, 20, 30, 40], (num) => num > 25));  \n// \u2705 Output: 30\n\nconsole.log(findItem([\"cat\", \"dog\", \"elephant\"], (word) => word.length > 3));  \n// \u2705 Output: \"elephant\"\n\nconsole.log(findItem([true, false, true], (val) => val === false));  \n// \u2705 Output: false\n\nconsole.log(findItem([1, 2, 3], (num) => num > 10));  ";
 {
-    function findItem(arr, callback) {
-        return arr.find(callback);
+    // function findItem<T>(arr:T[],callback:(item:T)=>boolean):T | undefined{
+    //   return arr.find(callback)
+    // }
+    // console.log(findItem([99992,3,5,6],(num)=>num>4))
+}
+"\uD83D\uDE80 Next Challenge: mapArray<T>\nNow, let's move on to modifying elements in an array using generics!\n\n\uD83D\uDEE0 Your Task:\n1\uFE0F\u20E3 Write a function mapArray<T, U> that takes:\n\nAn array of type T[]\nA callback function that transforms each item into type U\n2\uFE0F\u20E3 It should return a new array of transformed values\n\uD83D\uDD39 Example Output:\n\nconsole.log(mapArray([1, 2, 3], (num) => num * 2));  \n// \u2705 Output: [2, 4, 6]\n\nconsole.log(mapArray([\"hello\", \"world\"], (word) => word.toUpperCase()));  \n// \u2705 Output: [\"HELLO\", \"WORLD\"]\n\nconsole.log(mapArray([true, false, true], (bool) => (bool ? \"Yes\" : \"No\")));  \n// \u2705 Output: [\"Yes\", \"No\", \"Yes\"]";
+{
+    //   function mapArray<T,U>(arr:T[],callback:(item:T)=>U):U[]{
+    //     return arr.map(callback)
+    //  }
+    //  console.log(mapArray([4,5,6,7,8],(num=>num*9)))
+}
+"\uD83D\uDE80 Assignment: groupBy<T>\nNow that you've mastered map and filter, let's create something more powerful\u2014a function that groups items in an array by a key!\n\n\uD83D\uDEE0 Your Task:\n1\uFE0F\u20E3 Write a function groupBy<T, K> that:\n\nTakes an array of objects (T[])\nTakes a callback function (item: T) => K that extracts a grouping key\nReturns an object where items are grouped by the extracted key\n\uD83D\uDD39 Example Usage:\n\nconst users = [\n  { id: 1, name: \"Alice\", role: \"admin\" },\n  { id: 2, name: \"Bob\", role: \"user\" },\n  { id: 3, name: \"Charlie\", role: \"admin\" },\n  { id: 4, name: \"Dave\", role: \"user\" }\n];\n\nconsole.log(groupBy(users, (user) => user.role));\n/*\n\u2705 Expected Output:\n{\n  admin: [\n    { id: 1, name: \"Alice\", role: \"admin\" },\n    { id: 3, name: \"Charlie\", role: \"admin\" }\n  ],\n  user: [\n    { id: 2, name: \"Bob\", role: \"user\" },\n    { id: 4, name: \"Dave\", role: \"user\" }\n  ]\n}\n*/";
+{
+    // function groupBy<T,K extends string | number>(arrObj:T[],callback:(item:T)=>K):Record<K,T[]>{
+    //   return arrObj.reduce((acc,item)=>{
+    //     const key = callback(item);
+    //     if (!acc[key]){
+    //       acc[key] = []
+    //     }
+    //     acc[key].push(item)
+    //     return acc
+    //   },{} as Record<K,T[]> )
+    // }
+}
+"\uD83D\uDD25 Next Assignment: Generic Constraints (extends)\n\u2705 Task 1: Object Constraint Lagao\nTuna ab tak \"kisi bhi type\" ke sath generics use kiya hai. Ab sirf objects allow karna seekh!\n\n\uD83D\uDEE0 Tera Kaam:\n\nEk function getObjectKeys<T> bana jo sirf objects accept kare (i.e., T extends object hona chahiye).\nYeh function us object ke keys ka array return karega.\n\uD83D\uDCCC Example Output:\n\n\nconsole.log(getObjectKeys({ name: \"Sahil\", age: 22 })); \n// Output: [\"name\", \"age\"]\n\uD83D\uDCA1 Hint: Object.keys() ka use kar!";
+{
+    function getObjectKeys(obj) {
+        return Object.keys(obj);
     }
-    console.log(findItem([99992, 3, 5, 6], function (num) { return num > 4; }));
+    console.log(getObjectKeys({ nargis: "name", ka: "ok", size: "hm", 40: "age", breast: "S", kaa: "o" }));
 }

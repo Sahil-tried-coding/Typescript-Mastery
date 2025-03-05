@@ -171,10 +171,145 @@ console.log(findItem([1, 2, 3], (num) => num > 10));  `
 {
 
 
-  function findItem<T>(arr:T[],callback:(item:T)=>boolean):T | undefined{
+  // function findItem<T>(arr:T[],callback:(item:T)=>boolean):T | undefined{
 
-    return arr.find(callback)
+  //   return arr.find(callback)
     
+  // }
+  // console.log(findItem([99992,3,5,6],(num)=>num>4))
+}
+
+
+`🚀 Next Challenge: mapArray<T>
+Now, let's move on to modifying elements in an array using generics!
+
+🛠 Your Task:
+1️⃣ Write a function mapArray<T, U> that takes:
+
+An array of type T[]
+A callback function that transforms each item into type U
+2️⃣ It should return a new array of transformed values
+🔹 Example Output:
+
+console.log(mapArray([1, 2, 3], (num) => num * 2));  
+// ✅ Output: [2, 4, 6]
+
+console.log(mapArray(["hello", "world"], (word) => word.toUpperCase()));  
+// ✅ Output: ["HELLO", "WORLD"]
+
+console.log(mapArray([true, false, true], (bool) => (bool ? "Yes" : "No")));  
+// ✅ Output: ["Yes", "No", "Yes"]`
+
+
+{
+//   function mapArray<T,U>(arr:T[],callback:(item:T)=>U):U[]{
+
+//     return arr.map(callback)
+//  }
+ 
+//  console.log(mapArray([4,5,6,7,8],(num=>num*9)))
+}
+
+
+
+`🚀 Assignment: groupBy<T>
+Now that you've mastered map and filter, let's create something more powerful—a function that groups items in an array by a key!
+
+🛠 Your Task:
+1️⃣ Write a function groupBy<T, K> that:
+
+Takes an array of objects (T[])
+Takes a callback function (item: T) => K that extracts a grouping key
+Returns an object where items are grouped by the extracted key
+🔹 Example Usage:
+
+const users = [
+  { id: 1, name: "Alice", role: "admin" },
+  { id: 2, name: "Bob", role: "user" },
+  { id: 3, name: "Charlie", role: "admin" },
+  { id: 4, name: "Dave", role: "user" }
+];
+
+console.log(groupBy(users, (user) => user.role));
+/*
+✅ Expected Output:
+{
+  admin: [
+    { id: 1, name: "Alice", role: "admin" },
+    { id: 3, name: "Charlie", role: "admin" }
+  ],
+  user: [
+    { id: 2, name: "Bob", role: "user" },
+    { id: 4, name: "Dave", role: "user" }
+  ]
+}
+*/`
+
+
+
+{
+  // function groupBy<T,K extends string | number>(arrObj:T[],callback:(item:T)=>K):Record<K,T[]>{
+
+  //   return arrObj.reduce((acc,item)=>{
+  //     const key = callback(item);
+
+  //     if (!acc[key]){
+  //       acc[key] = []
+  //     }
+
+  //     acc[key].push(item)
+
+  //     return acc
+  //   },{} as Record<K,T[]> )
+   
+  // }
+}
+
+`🔥 Next Assignment: Generic Constraints (extends)
+✅ Task 1: Object Constraint Lagao
+Tuna ab tak "kisi bhi type" ke sath generics use kiya hai. Ab sirf objects allow karna seekh!
+
+🛠 Tera Kaam:
+
+Ek function getObjectKeys<T> bana jo sirf objects accept kare (i.e., T extends object hona chahiye).
+Yeh function us object ke keys ka array return karega.
+📌 Example Output:
+
+
+console.log(getObjectKeys({ name: "Sahil", age: 22 })); 
+// Output: ["name", "age"]
+💡 Hint: Object.keys() ka use kar!`
+
+{
+  // function getObjectKeys<T extends object>(obj:T){
+
+  //   return Object.keys(obj)
+  // }
+
+
+  // console.log(getObjectKeys({nargis:"name",ka:"ok",size:"hm",40:"age",breast:"S",kaa:"o"}))
+}
+
+
+`🔥 Next Task (Thoda Difficult)
+✅ Task 2: Get Object Value
+Ab keys ke sath values bhi chahiye!
+
+🛠 Tera Kaam:
+
+Ek function getObjectEntries<T> bana jo object ke keys + values ka array return kare.
+Return type should be [key, value][] (array of tuples).
+📌 Example Output:
+
+console.log(getObjectEntries({ name: "Sahil", age: 22 }));
+// Output: [["name", "Sahil"], ["age", 22]]
+💡 Hint: Object.entries() ka use kar! 🚀
+
+`
+
+{
+  function getObjectEntires<T extends object > (obj:T):T {
+
+    return {obj}
   }
-  console.log(findItem([99992,3,5,6],(num)=>num>4))
 }
