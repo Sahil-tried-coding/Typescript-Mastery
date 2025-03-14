@@ -5,10 +5,15 @@ function ThemeWala() {
 
     const myTheme = useContext(myContext)
 
+
+
     
   return (
     <div>
-        <button onClick={myTheme?.toggleTheme}>Toggle Theme</button>
+{
+  `this is the theme ${myTheme?.theme}`
+}
+<button onClick={()=>myTheme?.toggleFunc()}>CLikc me babes</button>
     </div>
   )
 }
