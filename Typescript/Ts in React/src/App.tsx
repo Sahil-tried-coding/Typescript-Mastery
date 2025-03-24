@@ -14,7 +14,7 @@ function App() {
       {/* hello world this is typescript in react
       <Props name='sahil' age={21}/>
       <h2>hi thid id djd f</h2> */}
-      <UseState/>
+{/*       <UseState/> */}
       <ThemeWala/>
       <Counter/>
       {/* <Reducers/> */}
